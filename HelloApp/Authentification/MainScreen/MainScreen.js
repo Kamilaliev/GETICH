@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, ImageBackground, StyleSheet } from 'react-native';
 
-const backgroundImage = require('../assets/61d31014a73eb5f40ae23f8e3dfcb6808b44f3a1.jpg'); // Убедись, что путь правильный
+const backgroundImage = require('../../assets/61d31014a73eb5f40ae23f8e3dfcb6808b44f3a1.jpg'); // Убедись, что путь правильный
 
 const MainScreen = ({ navigation }) => {
   return (

@@ -1,9 +1,33 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const handleLogin = async () => {
+    try {
+      const response = await fetch('http://192.168.0.106:3000/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Показываем сообщение и задержку
+        Alert.alert('Успешный вход', 'Вы будете перенаправлены...');
+        setTimeout(() => {
+          navigation.navigate('MapScreen');
+        }, 1500); // Задержка 1.5 секунды
+      } else {
+        Alert.alert('Ошибка входа', data.message || 'Неверный email или пароль');
+      }
+    } catch (error) {
+      Alert.alert('Ошибка', 'Не удалось подключиться к серверу');
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -23,7 +47,7 @@ export default function LoginScreen({ navigation }) {
         onChangeText={setPassword}
         secureTextEntry
       />
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Giris Et</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
@@ -70,7 +94,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: '600',
     fontSize: 16,
-    
   },
   linkText: {
     color: '#4C3014',

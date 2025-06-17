@@ -12,7 +12,7 @@ import { Ionicons } from '@expo/vector-icons';
 function Welcome({ navigation }) {
     return (
         <ImageBackground
-            source={require('../assets/0a79b35f93cd27d1c6bcfc3a56ba51e79f01a676.jpg')}
+            source={require('../../assets/0a79b35f93cd27d1c6bcfc3a56ba51e79f01a676.jpg')}
             style={styles.background}
             resizeMode="cover"
         >

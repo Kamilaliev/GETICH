@@ -14,11 +14,14 @@ export default function SignUpScreen({ navigation }) {
   }
 
   if (password !== confirmPassword) {
+
     alert('Пароли не совпадают');
     return;
-  }
 
-  fetch('http://YOUR_LOCAL_IP:3000/signup', {
+  }
+  console.log("adawdadawd");
+  
+  fetch('http://192.168.0.106:3000/signup', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password, passwordConfirm: confirmPassword }),
@@ -28,6 +31,7 @@ export default function SignUpScreen({ navigation }) {
       if (data.message === 'Пользователь успешно зарегистрирован') {
         alert('Успешно зарегистрированы');
         navigation.navigate('Login');
+
       } else {
         alert(data.message);
       }

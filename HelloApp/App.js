@@ -7,6 +7,7 @@ import Second from './Giris/SecondScreen/Second'
 import MainScreen from './Authentification/MainScreen/MainScreen'
 import LoginScreen from './Authentification/LoginScreen/LoginScreen'
 import SignUpScreen from './Authentification/SighUpScreen/SighUp'
+import MapScreen from './MapScreen/MapScreen'
 
 
 
@@ -25,7 +26,7 @@ function App() {
         <Stack.Screen name='Main'  component={MainScreen}/>
         <Stack.Screen name='Login' component={LoginScreen}/>
         <Stack.Screen name='SignUp' component={SignUpScreen}/>
-
+        <Stack.Screen name='MapScreen' component={MapScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
