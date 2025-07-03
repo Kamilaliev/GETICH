@@ -8,6 +8,7 @@ import MainScreen from './Authentification/MainScreen/MainScreen'
 import LoginScreen from './Authentification/LoginScreen/LoginScreen'
 import SignUpScreen from './Authentification/SighUpScreen/SighUp'
 import MapScreen from './MapScreen/MapScreen'
+import Menu from './CafeMenu/Menu'
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <Stack.Screen name='Login' component={LoginScreen}/>
         <Stack.Screen name='SignUp' component={SignUpScreen}/>
         <Stack.Screen name='MapScreen' component={MapScreen}/>
+        <Stack.Screen name='Menu' component={Menu}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
