@@ -69,7 +69,7 @@ export default function CafeMenu() {
 
       {/* Future: render menu items by category */}
       <View style={styles.placeholder}>
-        <Text style={{ color: '#aaa' }}>Тут будут товары для: {selectedCategory}</Text>
+        <Text style={{ color: '#aaa' }}>Burada mallar olacaq: {selectedCategory}</Text>
       </View>
     </ScrollView>
   );

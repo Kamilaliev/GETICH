@@ -33,8 +33,8 @@ export default function MapScreen() {
       let { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') {
         Alert.alert(
-          'Требуется разрешение',
-          'Для работы карты необходимо разрешение на геолокацию',
+          'İcazə tələb olunur',
+          'Xəritənin işləməsi üçün geolokasiya icazəsi lazımdır',
           [{ text: 'OK' }]
         );
         return;
@@ -48,7 +48,7 @@ export default function MapScreen() {
         setLocation(loc.coords);
         await fetchCafes(loc.coords);
       } catch (error) {
-        Alert.alert('Ошибка', 'Не удалось определить ваше местоположение');
+        Alert.alert('Səhv', 'Yerinizi müəyyənləşdirə bilmədi');
       } finally {
         setLoading(false);
       }
@@ -125,7 +125,7 @@ export default function MapScreen() {
     return (
       <View style={styles.loaderContainer}>
         <ActivityIndicator size="large" color="#0000ff" />
-        <Text style={styles.loadingText}>Определяем ваше местоположение...</Text>
+        <Text style={styles.loadingText}>Yerinizi müəyyənləşdirin...</Text>
       </View>
     );
   }

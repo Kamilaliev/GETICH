@@ -17,7 +17,7 @@ function Second({ navigation }) {
             resizeMode="cover"
         >
             <View style={styles.overlay}>
-                <Text style={styles.title}>What is{"\n"}getich!</Text>
+                <Text style={styles.title}>Getich{"\n"}nədir?</Text>
                 <Text style={styles.subtitle}>Getich — bu mobil tətbiqdir, yaxınlıqdakı kafeləri tapmağa, onlayn qəhvə sifariş etməyə və növbə gözləmədən götürməyə imkan verir.</Text>
 
                 <View style={styles.indicatorWrapper}>

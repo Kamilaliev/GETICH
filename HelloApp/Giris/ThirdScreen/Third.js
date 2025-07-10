@@ -17,7 +17,7 @@ function Third({ navigation }) {
             resizeMode="cover"
         >
             <View style={styles.overlay}>
-                <Text style={styles.title}>What makes us {"\n"}different!</Text>
+                <Text style={styles.title}>Bizi başqalarından {"\n"}fərqləndirən nədir?</Text>
                 
                   <Text style ={styles.different}>
                     Sırasız sifariş

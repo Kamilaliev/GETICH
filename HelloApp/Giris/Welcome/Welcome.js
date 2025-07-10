@@ -17,7 +17,7 @@ function Welcome({ navigation }) {
             resizeMode="cover"
         >
             <View style={styles.overlay}>
-                <Text style={styles.title}>Welcome to{"\n"}getich!</Text>
+                <Text style={styles.title}>Getich-ə{"\n"}xoş gəlmisiniz</Text>
                 <Text style={styles.subtitle}>qəhvəyə aparan qısa yolunuz!
                     Növbəsiz sifariş verin, vaxtında götürün, ləzzətdən zövq alın.</Text>
 

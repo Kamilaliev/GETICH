@@ -18,13 +18,13 @@ export default function CafeCard({ cafe, onRoutePress }) {
             style={[styles.button, { backgroundColor: '#6f4e37' }]}
             onPress={() => navigation.navigate('Menu')}
           >
-            <Text style={styles.buttonText}>Меню</Text>
+            <Text style={styles.buttonText}>Menu</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.button, { backgroundColor: '#388e3c' }]}
             onPress={onRoutePress}
           >
-            <Text style={styles.buttonText}>Маршрут</Text>
+            <Text style={styles.buttonText}>Marşrut</Text>
           </TouchableOpacity>
         </View>
       </View>

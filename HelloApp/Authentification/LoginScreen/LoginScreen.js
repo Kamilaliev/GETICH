@@ -7,7 +7,7 @@ export default function LoginScreen({ navigation }) {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://192.168.0.102:3000/login', {
+      const response = await fetch('http://192.168.0.103:3000/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -17,15 +17,15 @@ export default function LoginScreen({ navigation }) {
 
       if (response.ok) {
         // Показываем сообщение и задержку
-        Alert.alert('Успешный вход', 'Вы будете перенаправлены...');
+        Alert.alert('Uğurlu giriş', ' yönləndiriləcəksiniz...');
         setTimeout(() => {
           navigation.navigate('MapScreen');
         }, 1500); // Задержка 1.5 секунды
       } else {
-        Alert.alert('Ошибка входа', data.message || 'Неверный email или пароль');
+        Alert.alert('Giriş xətası', data.message || 'Yanlış e-poçt və ya şifrə');
       }
     } catch (error) {
-      Alert.alert('Ошибка', 'Не удалось подключиться к серверу');
+      Alert.alert('Səhv', 'Serverə qoşula bilmədi');
     }
   };
 
@@ -51,10 +51,10 @@ export default function LoginScreen({ navigation }) {
         <Text style={styles.buttonText}>Giris Et</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-        <Text style={styles.linkText}>Нет аккаунта? Зарегистрируйтесь</Text>
+        <Text style={styles.linkText}>Hesab yoxdur? Qeydiyyatdan keçin</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Main')}>
-        <Text style={styles.linkText}>Назад</Text>
+        <Text style={styles.linkText}>Geri</Text>
       </TouchableOpacity>
     </View>
   );

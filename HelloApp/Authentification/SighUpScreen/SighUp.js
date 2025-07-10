@@ -15,21 +15,21 @@ export default function SignUpScreen({ navigation }) {
 
   if (password !== confirmPassword) {
 
-    alert('Пароли не совпадают');
+    alert('Parollar uyğun gəlmir');
     return;
 
   }
   console.log("adawdadawd");
   
-  fetch('http://192.168.0.106:3000/signup', {
+  fetch('http://192.168.0.103:3000/signup', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password, passwordConfirm: confirmPassword }),
   })
     .then(res => res.json())
     .then(data => {
-      if (data.message === 'Пользователь успешно зарегистрирован') {
-        alert('Успешно зарегистрированы');
+      if (data.message === 'İstifadəçi uğurla qeydiyyatdan keçib') {
+        alert('Uğurla qeydiyyatdan');
         navigation.navigate('Login');
 
       } else {
@@ -38,7 +38,7 @@ export default function SignUpScreen({ navigation }) {
     })
     .catch(err => {
       console.error(err);
-      alert('Ошибка подключения к серверу');
+      alert('Server bağlantısı xətası');
     });
 };
 
@@ -55,26 +55,26 @@ export default function SignUpScreen({ navigation }) {
       />
       <TextInput
         style={styles.input}
-        placeholder="Пароль"
+        placeholder="Parol"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
       />
       <TextInput
         style={styles.input}
-        placeholder="Подтвердите пароль"
+        placeholder="Şifrəni təsdiqləyin"
         value={confirmPassword}
         onChangeText={setConfirmPassword}
         secureTextEntry
       />
       <TouchableOpacity style={styles.button} onPress={handleSignUp}>
-        <Text style={styles.buttonText}>Зарегистрироваться</Text>
+        <Text style={styles.buttonText}>Qeydiyyatdan keçin</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-        <Text style={styles.linkText}>Уже есть аккаунт? Войти</Text>
+        <Text style={styles.linkText}>Artıq hesabınız var? Daxil ol</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Main')}>
-        <Text style={styles.linkText}>Назад</Text>
+        <Text style={styles.linkText}>Geri</Text>
       </TouchableOpacity>
     </View>
   );
